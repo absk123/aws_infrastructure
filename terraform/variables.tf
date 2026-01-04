@@ -9,3 +9,7 @@ variable "s3" {
 variable "net" {
 
 }
+
+variable "nlb" {
+
+}

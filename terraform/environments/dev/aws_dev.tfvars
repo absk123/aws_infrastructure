@@ -18,5 +18,17 @@ net =   {
         dev-subnet  =   {
             cidr_block  =   "10.0.1.0/24"
         }
+        lb-subnet  =   {
+            cidr_block  =   "10.0.2.0/24"
+        }
+    }
+}
+
+nlb =   {
+    dev-internal-lb = {
+        internal = false
+        load_balancer_type = "network"
+        sbnetkey = "lb-subnet"
+        enable_deletion_protection = true
     }
 }

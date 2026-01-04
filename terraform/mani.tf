@@ -10,3 +10,9 @@ module "VPC" {
   tags   = var.tags
 }
 
+module "NLB" {
+  source = "git::ssh://git@github.com/absk123/aws_module.git//aws_elb?ref=main"
+  nlb    = var.nlb
+  sbnet  = module.VPC.AWS_SUBNET
+  tags   = var.tags
+}

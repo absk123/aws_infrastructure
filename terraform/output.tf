@@ -16,3 +16,8 @@ output "AWS_SUBNET_ID" {
   }
 }
 
+output "AWS_LB_ID" {
+  value = {
+    for k, v in module.NLB.AWS_NLB : k => v.id
+  }
+}
