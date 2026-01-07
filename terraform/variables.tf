@@ -10,10 +10,10 @@ variable "net" {
 
 }
 
-variable "nlb" {
+variable "web" {
 
 }
 
-variable "web" {
+variable "cl-lb" {
 
 }
