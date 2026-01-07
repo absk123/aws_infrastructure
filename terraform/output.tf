@@ -16,8 +16,8 @@ output "AWS_SUBNET_ID" {
   }
 }
 
-output "AWS_LB_ID" {
+output "AWS_WEB_ID" {
   value = {
-    for k, v in module.NLB.AWS_NLB : k => v.id
+    for k, v in module.WEB.AWS_WEB : k => v.id
   }
 }

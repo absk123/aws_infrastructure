@@ -24,11 +24,8 @@ net =   {
     }
 }
 
-nlb =   {
-    dev-internal-lb = {
-        internal = false
-        load_balancer_type = "network"
-        sbnetkey = "lb-subnet"
-        enable_deletion_protection = true
+web = {
+    ami-0c55b159cbfafe1f0 = {
+        instance_type = "t2.micro"
     }
 }

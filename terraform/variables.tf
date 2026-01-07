@@ -13,3 +13,7 @@ variable "net" {
 variable "nlb" {
 
 }
+
+variable "web" {
+
+}
