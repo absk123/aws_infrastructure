@@ -22,3 +22,12 @@ module "CLB" {
   web = module.WEB.AWS_WEB
   tags = var.tags
 }
+
+module "NLB" {
+  source = "git::ssh://git@github.com/absk123/aws_module.git//aws_elb/Net_LB?ref=main"
+  nlb = var.nlb
+  lsnr = var.lsnr
+  sbnet = module.VPC.AWS_SUBNET
+  vnet = module.VPC.AWS_VPC
+  web = module.WEB.AWS_WEB
+}

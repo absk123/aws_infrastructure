@@ -27,3 +27,9 @@ output "AWS_CLB_ID" {
     for k, v in module.CLB.AWS_CLB : k => v.id
   }
 }
+
+output "AWS_NLB_ID" {
+  value = {
+    for k, v in module.NLB.AWS_NLB : k => v.id
+  }
+}

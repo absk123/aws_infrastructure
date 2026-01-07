@@ -46,3 +46,41 @@ cl-lb = {
         webkey = ["ami-0c55b159cbfafe1f0"]
     }
 }
+
+nlb = {
+    lb = {
+        dev-ntwrk-lb = {
+            internal           = false
+            load_balancer_type = "network"
+            s-key = "lb-subnet"
+        }
+    }
+    grp = {
+        target-group = {
+            name     = "network-tg"
+            port     = 80
+            protocol = "TCP"
+            v-key = "dev-vpc"
+            interval            = 30
+            timeout             = 10
+            healthy_threshold   = 3
+            unhealthy_threshold = 3
+        }
+    }
+    lsnr = {
+        listner = {
+            lb-key = "dev-ntwrk-lb"
+            port     = 80
+            protocol = "TCP"
+            type             = "forward"
+            grp-key = "target-group"
+        }
+    }
+    trg = {
+        target = {
+            grp-key = "target-group"
+            port             = 80
+            web-key = ["ami-0c55b159cbfafe1f0"]
+        }
+    }
+}

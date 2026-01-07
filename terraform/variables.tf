@@ -17,3 +17,11 @@ variable "web" {
 variable "cl-lb" {
 
 }
+
+variable "nlb" {
+  
+}
+
+variable "lsnr" {
+  default = {}
+}
